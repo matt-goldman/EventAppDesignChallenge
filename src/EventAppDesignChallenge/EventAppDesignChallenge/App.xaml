@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Application xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="EventAppDesignChallenge.App">
+    <Application.Resources>
+        <OnPlatform x:TypeArguments="x:String" x:Key="FontAwesome">
+            <On Platform="iOS" Value="FontAwesome"/>
+            <On Platform="Android" Value="fontawesome-webfont.ttf#Regular"/>
+            <On Platform="UWP" Value="/Assets/Fonts/fontawesome-webfont.ttf#"/>
+        </OnPlatform>
+        <OnPlatform x:TypeArguments="x:String" x:Key="MaterialDesignIcons">
+            <On Platform="iOS" Value="MaterialDesignIcons"/>
+            <On Platform="Android" Value="materialdesignicons-webfont.ttf#Regular"/>
+            <On Platform="UWP" Value="/Assets/Fonts/materialdesignicons-webfont.ttf#"/>
+        </OnPlatform>
+
+        <ResourceDictionary>
+            <Color x:Key="FashionPink">#FC8A93</Color>
+            <Color x:Key="FashionPurple">#6D6CC0</Color>
+        </ResourceDictionary>
+
+    </Application.Resources>
+</Application>
