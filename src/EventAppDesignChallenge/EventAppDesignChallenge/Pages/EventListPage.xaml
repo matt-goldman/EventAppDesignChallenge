@@ -2,19 +2,43 @@
 <ContentPage xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns="http://xamarin.com/schemas/2014/forms"
              x:Class="EventAppDesignChallenge.Pages.EventListPage"
-             xmlns:controls="clr-namespace:EventAppDesignChallenge.Controls">
-    <CollectionView ItemsSource="{Binding Events}">
-        <CollectionView.ItemTemplate>
-            <DataTemplate>
-                <controls:EventCard Address="{Binding Address}"
-                                    EventDate="{Binding Date}"
-                                    EventName="{Binding Title}"
-                                    BackgroundImage="{Binding Image}"
-                                    LikeIcon="{Binding HeartIcon}"
-                                    MarkerIcon="{Binding MarkerIcon}"
-                                    HeightRequest="300"
-                                    WidthRequest="300"/>
-            </DataTemplate>
-        </CollectionView.ItemTemplate>
-    </CollectionView>
+             xmlns:controls="clr-namespace:EventAppDesignChallenge.Controls"
+             xmlns:pancake="clr-namespace:Xamarin.Forms.PancakeView;assembly=Xamarin.Forms.PancakeView">
+    <Grid RowDefinitions="8*, 2*, 12*, 1*,2*">
+        <pancake:PancakeView Grid.Row="0"
+                             WidthRequest="300"
+                             HeightRequest="300"
+                             CornerRadius="25"
+                             HorizontalOptions="FillAndExpand"
+                             VerticalOptions="FillAndExpand"
+                             BackgroundColor="LightBlue"
+                             Padding="0">
+            <pancake:PancakeView.Shadow>
+                <pancake:DropShadow Color="#000000" Offset="10,10"/>
+            </pancake:PancakeView.Shadow>
+            <Grid RowDefinitions="35*, 20*, 20*, 10*">
+                <Image Source="Bubbles"
+                       Aspect="Fill"
+                       Grid.Row="0"
+                       Grid.RowSpan="4"/>
+                
+            </Grid>
+        </pancake:PancakeView>
+        <CollectionView ItemsSource="{Binding Events}"
+                        Grid.Row="2"
+                        Grid.RowSpan="2">
+            <CollectionView.ItemTemplate>
+                <DataTemplate>
+                    <controls:EventCard Address="{Binding Address}"
+                                        EventDate="{Binding Date}"
+                                        EventName="{Binding Title}"
+                                        BackgroundImage="{Binding Image}"
+                                        LikeIcon="{Binding HeartIcon}"
+                                        MarkerIcon="{Binding MarkerIcon}"
+                                        HeightRequest="280"
+                                        WidthRequest="280"/>
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+        </CollectionView>
+    </Grid>
 </ContentPage>

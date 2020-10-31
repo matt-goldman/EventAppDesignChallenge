@@ -122,6 +122,18 @@
       <AndroidResource Include="Resources\drawable-mdpi\fashion2.png"/>
       <AndroidResource Include="Resources\drawable-ldpi\fashion2.png"/>
   </ItemGroup>
+  <ItemGroup>
+  </ItemGroup>
+  <ItemGroup>
+      <AndroidResource Include="Resources\drawable-xxxhdpi\Bubbles.png"/>
+      <AndroidResource Include="Resources\drawable-xxhdpi\Bubbles.png"/>
+      <AndroidResource Include="Resources\drawable-xhdpi\Bubbles.png"/>
+      <AndroidResource Include="Resources\drawable-hdpi\Bubbles.png"/>
+      <AndroidResource Include="Resources\drawable-mdpi\Bubbles.png"/>
+      <AndroidResource Include="Resources\drawable-ldpi\Bubbles.png"/>
+  </ItemGroup>
+
+
 
 
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />

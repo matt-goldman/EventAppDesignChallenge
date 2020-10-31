@@ -14,6 +14,9 @@
                              Padding="0"
                              Margin="20"
                              BackgroundColor="White">
+            <pancake:PancakeView.Shadow>
+                <pancake:DropShadow Color="#000000" Offset="10,10"/>
+            </pancake:PancakeView.Shadow>
             <Grid RowDefinitions="2*,7*,2*,3*"
                   HeightRequest="300"
                   WidthRequest="300"
