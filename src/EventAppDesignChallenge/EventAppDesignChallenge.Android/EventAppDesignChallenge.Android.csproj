@@ -143,5 +143,14 @@
     <AndroidResource Include="Resources\drawable-mdpi\avatar.jpg" />
     <AndroidResource Include="Resources\drawable-ldpi\avatar.jpg" />
   </ItemGroup>
+  <ItemGroup>
+      <AndroidResource Include="Resources\drawable-xxxhdpi\foursquares.png"/>
+      <AndroidResource Include="Resources\drawable-xxhdpi\foursquares.png"/>
+      <AndroidResource Include="Resources\drawable-xhdpi\foursquares.png"/>
+      <AndroidResource Include="Resources\drawable-hdpi\foursquares.png"/>
+      <AndroidResource Include="Resources\drawable-mdpi\foursquares.png"/>
+      <AndroidResource Include="Resources\drawable-ldpi\foursquares.png"/>
+  </ItemGroup>
+
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />
 </Project>

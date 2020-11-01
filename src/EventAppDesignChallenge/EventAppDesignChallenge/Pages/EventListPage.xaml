@@ -158,15 +158,69 @@
                 </DataTemplate>
             </CollectionView.ItemTemplate>
         </CollectionView>
-        <Grid Grid.Row="4"
+        <Grid Grid.Row="3"
               ColumnDefinitions="4*, 2*, 2*, 2*"
+              Grid.RowSpan="2"
+              RowDefinitions="1* , 2*"
               Margin="35,0">
+            <pancake:PancakeView BackgroundColor="#FAFAFAFA"
+                                 Grid.Column="0"
+                                 Margin="0,15,0,0"
+                                 Grid.RowSpan="2"
+                                 Grid.Row="0">
+                <pancake:PancakeView.Clip>
+                    <EllipseGeometry Center="35,35"
+                                             RadiusX="35"
+                                             RadiusY="35"/>
+                </pancake:PancakeView.Clip>
+                <pancake:PancakeView BackgroundColor="{StaticResource FashionPink}"
+                                     Margin="10">
+                    <pancake:PancakeView.Clip>
+                        <EllipseGeometry Center="25,25"
+                                             RadiusX="25"
+                                             RadiusY="25"/>
+                    </pancake:PancakeView.Clip>
+                    <Image Source="foursquares"
+                           Scale="0.5"
+                           TranslationX="-29"
+                           TranslationY="-5"/>
+                </pancake:PancakeView>
+            </pancake:PancakeView>
+                                 
             <Label Grid.Column="1"
+                   Grid.Row="1"
                    Text="{Binding MessageIcon}"
+                   VerticalOptions="Center"
+                   FontSize="Large"
                    FontFamily="{StaticResource FontAwesome}"
                    TextColor="Gray"/>
+            <Label Grid.Column="1"
+                   Grid.Row="1"
+                   Text="."
+                   FontSize="50"
+                   VerticalOptions="Start"
+                   TranslationX="15"
+                   TranslationY="-30"
+                   TextColor="{StaticResource FashionPink}"/>
+            <Label Grid.Column="2"
+                   Grid.Row="1"
+                   Text="{Binding BellIcon}"
+                   VerticalOptions="Center"
+                   HorizontalOptions="Center"
+                   FontSize="Large"
+                   FontFamily="{StaticResource FontAwesome}"
+                   TextColor="Gray"/>
+            <Label Grid.Column="2"
+                   Grid.Row="1"
+                   Text="."
+                   FontSize="50"
+                   VerticalOptions="Start"
+                   TranslationX="30"
+                   TranslationY="-30"
+                   TextColor="{StaticResource FashionPink}"/>
             <Image Grid.Column="3"
                    HeightRequest="30"
+                   Grid.Row="1"
                    WidthRequest="30"
                    HorizontalOptions="EndAndExpand"
                    VerticalOptions="CenterAndExpand"

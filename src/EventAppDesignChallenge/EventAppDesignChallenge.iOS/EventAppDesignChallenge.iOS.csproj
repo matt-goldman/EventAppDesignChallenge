@@ -206,4 +206,18 @@
       <Visible>False</Visible>
     </ImageAsset>
   </ItemGroup>
+  <ItemGroup>
+    <ImageAsset Include="Assets.xcassets\foursquares.imageset\foursquares%403x.png">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\foursquares.imageset\foursquares%402x.png">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\foursquares.imageset\foursquares.png">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\foursquares.imageset\Contents.json">
+      <Visible>False</Visible>
+    </ImageAsset>
+  </ItemGroup>
 </Project>
