@@ -17,6 +17,8 @@ namespace EventAppDesignChallenge.ViewModels
         public string SearchIcon => "\uf002";
         public string MicIcon => "\uf130";
         public string SliderIcon => "\uf1de";
+        public string BellIcon => "\uf0a2";
+        public string MessageIcon => "\uf003";
 
         public EventListViewModel()
         {

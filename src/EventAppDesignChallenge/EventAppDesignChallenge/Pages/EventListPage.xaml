@@ -158,5 +158,26 @@
                 </DataTemplate>
             </CollectionView.ItemTemplate>
         </CollectionView>
+        <Grid Grid.Row="4"
+              ColumnDefinitions="4*, 2*, 2*, 2*"
+              Margin="35,0">
+            <Label Grid.Column="1"
+                   Text="{Binding MessageIcon}"
+                   FontFamily="{StaticResource FontAwesome}"
+                   TextColor="Gray"/>
+            <Image Grid.Column="3"
+                   HeightRequest="30"
+                   WidthRequest="30"
+                   HorizontalOptions="EndAndExpand"
+                   VerticalOptions="CenterAndExpand"
+                   d:Source="avatar"
+                   Source="avatar">
+                <Image.Clip>
+                    <EllipseGeometry Center="15,15"
+                                     RadiusX="15"
+                                     RadiusY="15"/>
+                </Image.Clip>
+            </Image>
+        </Grid>
     </Grid>
 </ContentPage>

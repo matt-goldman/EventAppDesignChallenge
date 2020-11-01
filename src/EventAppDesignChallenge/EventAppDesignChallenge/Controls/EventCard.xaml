@@ -84,6 +84,9 @@
                                      VerticalOptions="EndAndExpand"
                                      CornerRadius="10"
                                      Margin="0,-80,20,65">
+                    <pancake:PancakeView.Shadow>
+                        <pancake:DropShadow Color="#000000" Offset="2,2"/>
+                    </pancake:PancakeView.Shadow>
                     <StackLayout Spacing="0">
                         <Label d:Text="Oct"
                                Margin="0"
