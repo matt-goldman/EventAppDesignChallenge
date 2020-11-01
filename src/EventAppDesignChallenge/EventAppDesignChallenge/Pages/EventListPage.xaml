@@ -73,8 +73,8 @@
                 <Grid Grid.Row="2"
                       Grid.RowSpan="2"
                       HorizontalOptions="CenterAndExpand"
-                      Margin="50,20"
-                      ColumnDefinitions="7*, 2*">
+                      Margin="10,20"
+                      ColumnDefinitions="8*, 2*">
                     <pancake:PancakeView BackgroundColor="White"
                                          Grid.Column="0"
                                          CornerRadius="15">
@@ -93,8 +93,16 @@
                                VerticalOptions="StartAndExpand">
                                 <Entry.Effects>
                                     <effects:EntryRemoveBorder/>
+                                    <effects:EntryRemoveLine/>
                                 </Entry.Effects>
                             </Entry>
+                            <Label Grid.Column="2"
+                                   Text="{Binding MicIcon}"
+                                   FontFamily="{StaticResource FontAwesome}"
+                                   TextColor="{StaticResource FashionPink}"
+                                   VerticalOptions="CenterAndExpand"
+                                   FontSize="Large"
+                                   HorizontalOptions="Center"/>
                         </Grid>
                     </pancake:PancakeView>
                     <pancake:PancakeView BackgroundColor="{StaticResource FashionPink}"
