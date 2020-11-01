@@ -7,6 +7,7 @@ namespace EventAppDesignChallenge.ViewModels
     public class EventListViewModel : BaseViewModel
     {
         public ObservableCollection<EventModel> Events { get; set; } = new ObservableCollection<EventModel>();
+        public ObservableCollection<EventCategory> Categories { get; set; } = new ObservableCollection<EventCategory>();
 
         public DateTime Today => DateTime.Now;
 
@@ -32,6 +33,47 @@ namespace EventAppDesignChallenge.ViewModels
                 Date = new DateTime(2020, 11, 21),
                 Image = "fashion2",
                 Title = "MonkeyFest USA"
+            });
+
+            Categories.Add(new EventCategory
+            {
+                Name = "All",
+                Selected = false
+            });
+            Categories.Add(new EventCategory
+            {
+                Name = "Business",
+                Selected = false
+            });
+            Categories.Add(new EventCategory
+            {
+                Name = "Fashion",
+                Selected = true
+            });
+            Categories.Add(new EventCategory
+            {
+                Name = "Music",
+                Selected = false
+            });
+            Categories.Add(new EventCategory
+            {
+                Name = "Art & Culture",
+                Selected = false
+            });
+            Categories.Add(new EventCategory
+            {
+                Name = "Science & Technology",
+                Selected = false
+            });
+            Categories.Add(new EventCategory
+            {
+                Name = "Sports",
+                Selected = false
+            });
+            Categories.Add(new EventCategory
+            {
+                Name = "Food & Drink",
+                Selected = false
             });
         }
     }

@@ -9,12 +9,18 @@
              xmlns:rainbows="clr-namespace:Xamarin.Forms.DebugRainbows;assembly=Xamarin.Forms.DebugRainbows"
              xmlns:pancake="clr-namespace:Xamarin.Forms.PancakeView;assembly=Xamarin.Forms.PancakeView"
              xmlns:effects="clr-namespace:Xamarin.Toolkit.Effects;assembly=Xamarin.Toolkit.Effects"
+             xmlns:converters="clr-namespace:EventAppDesignChallenge.Converters"
              rainbows:DebugRainbow.ShowColors="False">
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <converters:SelectedToColorConverter x:Key="SelectedToColor"/>
+        </ResourceDictionary>
+    </ContentPage.Resources>
     <Grid RowDefinitions="8*, 2*, 12*, 1*,2*">
         <pancake:PancakeView Grid.Row="0"
                              WidthRequest="300"
                              HeightRequest="300"
-                             CornerRadius="25"
+                             CornerRadius="35"
                              HorizontalOptions="FillAndExpand"
                              VerticalOptions="FillAndExpand"
                              BackgroundColor="LightBlue"
@@ -65,31 +71,76 @@
                     <Label Text="{Binding EventCount, StringFormat='{0} Events around you'}"/>
                 </StackLayout>
                 <Grid Grid.Row="2"
+                      Grid.RowSpan="2"
                       HorizontalOptions="CenterAndExpand"
-                      VerticalOptions="CenterAndExpand"
-                      ColumnDefinitions="1*, 6*, 2*">
-                    <BoxView Grid.ColumnSpan="3"
-                             Grid.Column="0"
-                             Margin="0"
-                             HorizontalOptions="CenterAndExpand"
-                             BackgroundColor="White">
-                        <BoxView.Clip>
-                            <EllipseGeometry Center="35,35"
-                                             RadiusX="15"
-                                             RadiusY="15"/>
-                        </BoxView.Clip>
-                    </BoxView>
-                    <Label Grid.Column="0"
-                           Text="{Binding SearchIcon}"
-                           FontFamily="{StaticResource FontAwesome}"
-                           VerticalOptions="CenterAndExpand"/>
-                    <Entry Grid.Column="1"
-                           Placeholder="FindEvents"
-                           BackgroundColor="White"
-                           VerticalOptions="CenterAndExpand"/>
+                      Margin="50,20"
+                      ColumnDefinitions="7*, 2*">
+                    <pancake:PancakeView BackgroundColor="White"
+                                         Grid.Column="0"
+                                         CornerRadius="15">
+                        <Grid HorizontalOptions="StartAndExpand"
+                          VerticalOptions="EndAndExpand"
+                          ColumnDefinitions="1*, 6*">
+                            <Label Grid.Column="0"
+                               Text="{Binding SearchIcon}"
+                               FontFamily="{StaticResource FontAwesome}"
+                               VerticalOptions="CenterAndExpand"
+                               Margin="20,0,0,0"
+                               HorizontalOptions="EndAndExpand"/>
+                            <Entry Grid.Column="1"
+                               Placeholder="FindEvents"
+                               BackgroundColor="White"
+                               VerticalOptions="StartAndExpand">
+                                <Entry.Effects>
+                                    <effects:EntryRemoveBorder/>
+                                </Entry.Effects>
+                            </Entry>
+                        </Grid>
+                    </pancake:PancakeView>
+                    <pancake:PancakeView BackgroundColor="{StaticResource FashionPink}"
+                                         Margin="5,0,15,0"
+                                             Grid.Column="1"
+                                             CornerRadius="15"
+                                             WidthRequest="30"
+                                             HeightRequest="30">
+                        <Label TextColor="White"
+                               Text="{Binding SliderIcon}"
+                               FontFamily="{StaticResource FontAwesome}"
+                               FontSize="Large"
+                               FontAttributes="Bold"
+                               HorizontalOptions="CenterAndExpand"
+                               VerticalOptions="CenterAndExpand"
+                               HorizontalTextAlignment="Center"
+                               VerticalTextAlignment="Center"
+                               Rotation="90"/>
+                    </pancake:PancakeView>
                 </Grid>
             </Grid>
         </pancake:PancakeView>
+        <CollectionView Grid.Row="1"
+                        ItemsSource="{Binding Categories}"
+                        VerticalOptions="Center"
+                        Margin="10">
+            <CollectionView.ItemsLayout>
+                <LinearItemsLayout Orientation="Horizontal"
+                                   ItemSpacing="10"/>
+            </CollectionView.ItemsLayout>
+            <CollectionView.ItemTemplate>
+                <DataTemplate>
+                    <pancake:PancakeView BackgroundColor="{Binding Selected, Converter={StaticResource SelectedToColor}}"
+                                         Margin="10"
+                                         CornerRadius="10"
+                                         HorizontalOptions="CenterAndExpand"
+                                         VerticalOptions="Center">
+                        <Label Text="{Binding Name}"
+                               HorizontalOptions="CenterAndExpand"
+                               HorizontalTextAlignment="Center"
+                               VerticalTextAlignment="Center"
+                               Margin="5"/>
+                    </pancake:PancakeView>
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+        </CollectionView>
         <CollectionView ItemsSource="{Binding Events}"
                         Grid.Row="2"
                         Grid.RowSpan="2"
