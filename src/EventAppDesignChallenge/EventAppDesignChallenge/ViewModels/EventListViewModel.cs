@@ -8,6 +8,15 @@ namespace EventAppDesignChallenge.ViewModels
     {
         public ObservableCollection<EventModel> Events { get; set; } = new ObservableCollection<EventModel>();
 
+        public DateTime Today => DateTime.Now;
+
+        public string UserName => "Alina";
+
+        public int EventCount => 235;
+        public string SearchIcon => "\uf002";
+        public string MicIcon => "\uf130";
+        public string SliderIcon => "\uf1de";
+
         public EventListViewModel()
         {
             Events.Add(new EventModel

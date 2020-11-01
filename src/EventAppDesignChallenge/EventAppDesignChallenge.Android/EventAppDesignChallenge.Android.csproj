@@ -62,6 +62,9 @@
     <PackageReference Include="Xamarin.Forms.PancakeView">
       <Version>2.3.0.759</Version>
     </PackageReference>
+    <PackageReference Include="Xamarin.Toolkit.Effects">
+      <Version>1.0.0</Version>
+    </PackageReference>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="MainActivity.cs" />
@@ -107,34 +110,38 @@
   <ItemGroup>
   </ItemGroup>
   <ItemGroup>
-      <AndroidResource Include="Resources\drawable-xxxhdpi\fashion1.png"/>
-      <AndroidResource Include="Resources\drawable-xxhdpi\fashion1.png"/>
-      <AndroidResource Include="Resources\drawable-xhdpi\fashion1.png"/>
-      <AndroidResource Include="Resources\drawable-hdpi\fashion1.png"/>
-      <AndroidResource Include="Resources\drawable-mdpi\fashion1.png"/>
-      <AndroidResource Include="Resources\drawable-ldpi\fashion1.png"/>
+    <AndroidResource Include="Resources\drawable-xxxhdpi\fashion1.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\fashion1.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\fashion1.png" />
+    <AndroidResource Include="Resources\drawable-hdpi\fashion1.png" />
+    <AndroidResource Include="Resources\drawable-mdpi\fashion1.png" />
+    <AndroidResource Include="Resources\drawable-ldpi\fashion1.png" />
   </ItemGroup>
   <ItemGroup>
-      <AndroidResource Include="Resources\drawable-xxxhdpi\fashion2.png"/>
-      <AndroidResource Include="Resources\drawable-xxhdpi\fashion2.png"/>
-      <AndroidResource Include="Resources\drawable-xhdpi\fashion2.png"/>
-      <AndroidResource Include="Resources\drawable-hdpi\fashion2.png"/>
-      <AndroidResource Include="Resources\drawable-mdpi\fashion2.png"/>
-      <AndroidResource Include="Resources\drawable-ldpi\fashion2.png"/>
+    <AndroidResource Include="Resources\drawable-xxxhdpi\fashion2.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\fashion2.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\fashion2.png" />
+    <AndroidResource Include="Resources\drawable-hdpi\fashion2.png" />
+    <AndroidResource Include="Resources\drawable-mdpi\fashion2.png" />
+    <AndroidResource Include="Resources\drawable-ldpi\fashion2.png" />
   </ItemGroup>
   <ItemGroup>
   </ItemGroup>
   <ItemGroup>
-      <AndroidResource Include="Resources\drawable-xxxhdpi\Bubbles.png"/>
-      <AndroidResource Include="Resources\drawable-xxhdpi\Bubbles.png"/>
-      <AndroidResource Include="Resources\drawable-xhdpi\Bubbles.png"/>
-      <AndroidResource Include="Resources\drawable-hdpi\Bubbles.png"/>
-      <AndroidResource Include="Resources\drawable-mdpi\Bubbles.png"/>
-      <AndroidResource Include="Resources\drawable-ldpi\Bubbles.png"/>
+    <AndroidResource Include="Resources\drawable-xxxhdpi\Bubbles.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\Bubbles.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\Bubbles.png" />
+    <AndroidResource Include="Resources\drawable-hdpi\Bubbles.png" />
+    <AndroidResource Include="Resources\drawable-mdpi\Bubbles.png" />
+    <AndroidResource Include="Resources\drawable-ldpi\Bubbles.png" />
   </ItemGroup>
-
-
-
-
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable-xxxhdpi\avatar.jpg" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\avatar.jpg" />
+    <AndroidResource Include="Resources\drawable-xhdpi\avatar.jpg" />
+    <AndroidResource Include="Resources\drawable-hdpi\avatar.jpg" />
+    <AndroidResource Include="Resources\drawable-mdpi\avatar.jpg" />
+    <AndroidResource Include="Resources\drawable-ldpi\avatar.jpg" />
+  </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />
 </Project>

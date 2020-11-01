@@ -2,8 +2,14 @@
 <ContentPage xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns="http://xamarin.com/schemas/2014/forms"
              x:Class="EventAppDesignChallenge.Pages.EventListPage"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
              xmlns:controls="clr-namespace:EventAppDesignChallenge.Controls"
-             xmlns:pancake="clr-namespace:Xamarin.Forms.PancakeView;assembly=Xamarin.Forms.PancakeView">
+             xmlns:rainbows="clr-namespace:Xamarin.Forms.DebugRainbows;assembly=Xamarin.Forms.DebugRainbows"
+             xmlns:pancake="clr-namespace:Xamarin.Forms.PancakeView;assembly=Xamarin.Forms.PancakeView"
+             xmlns:effects="clr-namespace:Xamarin.Toolkit.Effects;assembly=Xamarin.Toolkit.Effects"
+             rainbows:DebugRainbow.ShowColors="False">
     <Grid RowDefinitions="8*, 2*, 12*, 1*,2*">
         <pancake:PancakeView Grid.Row="0"
                              WidthRequest="300"
@@ -12,21 +18,82 @@
                              HorizontalOptions="FillAndExpand"
                              VerticalOptions="FillAndExpand"
                              BackgroundColor="LightBlue"
-                             Padding="0">
+                             Padding="0"
+                             x:Name="HeaderSection">
             <pancake:PancakeView.Shadow>
                 <pancake:DropShadow Color="#000000" Offset="10,10"/>
             </pancake:PancakeView.Shadow>
-            <Grid RowDefinitions="35*, 20*, 20*, 10*">
+            <Grid RowDefinitions="3*, 2*, 2*, 1*">
                 <Image Source="Bubbles"
                        Aspect="Fill"
                        Grid.Row="0"
                        Grid.RowSpan="4"/>
-                
+                <Grid Grid.Row="0"
+                      ColumnDefinitions="3*, 9*"
+                      VerticalOptions="CenterAndExpand"
+                      HorizontalOptions="CenterAndExpand">
+                    <Image Grid.Column="0"
+                           Margin="10,10,0,0"
+                           HorizontalOptions="EndAndExpand"
+                           VerticalOptions="CenterAndExpand"
+                           d:Source="avatar"
+                           Source="avatar">
+                        <Image.Clip>
+                            <EllipseGeometry Center="35,35"
+                                             RadiusX="35"
+                                             RadiusY="35"/>
+                        </Image.Clip>
+                    </Image>
+                    <StackLayout Grid.Column="1"
+                                 VerticalOptions="CenterAndExpand"
+                                 HorizontalOptions="Start">
+                        <Label Text="{Binding Today, StringFormat='{0:dd MMM yyyy}'}"
+                               TextColor="{StaticResource FashionPurple}"
+                               d:Text="15 Oct 2020"/>
+                        <Label d:Text="Alina"
+                               Text="{Binding UserName}"
+                               TextColor="{StaticResource FashionPurple}"
+                               FontAttributes="Bold"
+                               FontSize="Large"/>
+                    </StackLayout>
+                </Grid>
+                <StackLayout Grid.Row="1"
+                             Margin="40,5">
+                    <Label Text="Find Amazing Events"
+                           FontSize="Title"
+                           FontAttributes="Bold"/>
+                    <Label Text="{Binding EventCount, StringFormat='{0} Events around you'}"/>
+                </StackLayout>
+                <Grid Grid.Row="2"
+                      HorizontalOptions="CenterAndExpand"
+                      VerticalOptions="CenterAndExpand"
+                      ColumnDefinitions="1*, 6*, 2*">
+                    <BoxView Grid.ColumnSpan="3"
+                             Grid.Column="0"
+                             Margin="0"
+                             HorizontalOptions="CenterAndExpand"
+                             BackgroundColor="White">
+                        <BoxView.Clip>
+                            <EllipseGeometry Center="35,35"
+                                             RadiusX="15"
+                                             RadiusY="15"/>
+                        </BoxView.Clip>
+                    </BoxView>
+                    <Label Grid.Column="0"
+                           Text="{Binding SearchIcon}"
+                           FontFamily="{StaticResource FontAwesome}"
+                           VerticalOptions="CenterAndExpand"/>
+                    <Entry Grid.Column="1"
+                           Placeholder="FindEvents"
+                           BackgroundColor="White"
+                           VerticalOptions="CenterAndExpand"/>
+                </Grid>
             </Grid>
         </pancake:PancakeView>
         <CollectionView ItemsSource="{Binding Events}"
                         Grid.Row="2"
-                        Grid.RowSpan="2">
+                        Grid.RowSpan="2"
+                        x:Name="EventCollection">
             <CollectionView.ItemTemplate>
                 <DataTemplate>
                     <controls:EventCard Address="{Binding Address}"
