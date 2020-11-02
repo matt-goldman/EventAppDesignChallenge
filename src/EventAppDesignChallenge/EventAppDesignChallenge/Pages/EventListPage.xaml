@@ -128,6 +128,7 @@
         <CollectionView Grid.Row="1"
                         ItemsSource="{Binding Categories}"
                         VerticalOptions="Center"
+                        SelectionMode="Single"
                         Margin="10">
             <CollectionView.ItemsLayout>
                 <LinearItemsLayout Orientation="Horizontal"
@@ -135,12 +136,33 @@
             </CollectionView.ItemsLayout>
             <CollectionView.ItemTemplate>
                 <DataTemplate>
-                    <pancake:PancakeView BackgroundColor="{Binding Selected, Converter={StaticResource SelectedToColor}}"
+                    <pancake:PancakeView 
                                          Margin="10"
                                          CornerRadius="10"
                                          HorizontalOptions="CenterAndExpand"
                                          VerticalOptions="Center">
-                        <Label Text="{Binding Name}"
+                        <VisualStateManager.VisualStateGroups>
+                            <VisualStateGroup Name="CommonState">
+                                <VisualState Name="Normal">
+                                    <VisualState.Setters>
+                                        <Setter Property="BackgroundColor" Value="LightGray"/>
+                                        <Setter TargetName="EventTitleLabel"
+                                                Property="Label.TextColor"
+                                                Value="DarkGray"/>
+                                    </VisualState.Setters>
+                                </VisualState>
+                                <VisualState Name="Selected">
+                                    <VisualState.Setters>
+                                        <Setter Property="BackgroundColor" Value="{StaticResource FashionPink}"/>
+                                        <Setter TargetName="EventTitleLabel"
+                                                Property="Label.TextColor"
+                                                Value="White"/>
+                                    </VisualState.Setters>
+                                </VisualState>
+                            </VisualStateGroup>
+                        </VisualStateManager.VisualStateGroups>
+                        <Label x:Name="EventTitleLabel"
+                               Text="{Binding Name}"
                                HorizontalOptions="CenterAndExpand"
                                HorizontalTextAlignment="Center"
                                VerticalTextAlignment="Center"
